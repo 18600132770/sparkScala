@@ -16,7 +16,26 @@ object SparkRunReflection extends App {
     .appName("SparkRunReflection")
     .getOrCreate()
 
-  spark.read.json("/DataAnalyse/测试数据/students.json").show()
+  val studentDataset = spark.read.json("/DataAnalyse/测试数据/students.json")
+
+  import spark.implicits
+
+  case class Student(id: Long, name: String, age: Long)
+
+  val studentRDD = studentDataset.rdd
+
+  studentRDD.map(row => Student(row.getAs[Long]("id"), row.getAs[String]("name"), row.getAs[Long]("age")))
+    .collect()
+    .foreach{
+      stu => println(stu.id + ": " + stu.name + ": " +stu.age)
+    }
+
+  studentRDD.map(row =>{
+    val map = row.getValuesMap[Any](Array("id", "name", "age"))
+    Student(map("id").toString().toLong, map("name").toString, map("age").toString().toLong)
+  }).collect().foreach(println)
+
+
 
 
 }
