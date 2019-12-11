@@ -25,4 +25,6 @@ object UDFOperation extends App{
 
   spark.sql("select name, lengthLongerThan(name, 3) from student").show()
 
+  spark.sql("select name from student where lengthLongerThan(name, 3)").show()
+
 }
