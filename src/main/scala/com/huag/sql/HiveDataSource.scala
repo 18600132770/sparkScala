@@ -19,6 +19,8 @@ object HiveDataSource {
       .getOrCreate()
 
 
+
+
     spark.sql("select * from kg.nlp_doc").show()
 
   }
