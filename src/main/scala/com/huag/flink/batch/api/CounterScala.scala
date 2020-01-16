@@ -8,6 +8,7 @@ import org.apache.flink.configuration.Configuration
 import org.apache.flink.core.fs.FileSystem.WriteMode
 
 /**
+  * 累加器
   * @author huag
   * @date 2020/1/16 16:44
   */
