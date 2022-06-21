@@ -23,7 +23,7 @@
         <fastjson.version>1.2.17</fastjson.version>
         <scala.compat.version>2.11</scala.compat.version>
         <druid.version>1.0.18</druid.version>
-        <mysql-connector.version>8.0.12</mysql-connector.version>
+        <mysql-connector.version>8.0.28</mysql-connector.version>
         <commons-dbcp.version>1.4</commons-dbcp.version>
         <rocketmq-client.version>3.2.6</rocketmq-client.version>
         <jedis.version>2.9.0</jedis.version>
